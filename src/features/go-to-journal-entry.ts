@@ -4,6 +4,14 @@ export async function goToToday(): Promise<void> {
 
   await goToJournalEntry(today);
 }
+
+export async function goToYesterday(): Promise<void> {
+  const yesterday = addDay(new Date(), -1);
+  const basename = format(yesterday, 'YYYY-MM-DD');
+
+  await goToJournalEntry(basename);
+}
+
 async function goToJournalEntry(basename: string): Promise<void> {
   const appResult = ctx.getApp();
   if (appResult.isErr()) {
