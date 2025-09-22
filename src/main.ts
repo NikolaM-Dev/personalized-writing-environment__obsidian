@@ -5,6 +5,8 @@ import {
   formatHeadings,
   fuzzyFindBackLinks,
   fuzzyFindOutgoingLinks,
+  goToToday,
+  goToYesterday,
   renameFile,
 } from './features';
 import { ctx, logger, wait } from './lib';
@@ -36,6 +38,8 @@ export default class Denote extends Plugin {
       { name: 'Format Front Matter', callback: formatFrontMater },
       { name: 'Fuzzy Find BackLinks', callback: fuzzyFindBackLinks },
       { name: 'Fuzzy Find Outgoing Links', callback: fuzzyFindOutgoingLinks },
+      { name: 'Go To Today', callback: goToToday },
+      { name: 'Go To Yesterday', callback: goToYesterday },
     ];
 
     commands.forEach((command) => {
