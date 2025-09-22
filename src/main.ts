@@ -33,13 +33,13 @@ export default class Denote extends Plugin {
 
   private setCommands(): void {
     const commands: ICommand[] = [
-      { name: 'Format Heading', callback: formatHeadings },
-      { name: 'Rename File', callback: renameFile },
       { name: 'Format Front Matter', callback: formatFrontMater },
+      { name: 'Format Heading', callback: formatHeadings },
       { name: 'Fuzzy Find BackLinks', callback: fuzzyFindBackLinks },
       { name: 'Fuzzy Find Outgoing Links', callback: fuzzyFindOutgoingLinks },
       { name: 'Go To Today', callback: goToToday },
       { name: 'Go To Yesterday', callback: goToYesterday },
+      { name: 'Rename File', callback: renameFile },
     ];
 
     commands.forEach((command) => {
