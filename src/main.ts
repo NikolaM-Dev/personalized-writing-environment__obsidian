@@ -12,11 +12,11 @@ import {
 import { ctx, logger, wait } from './lib';
 import { getCommand, getIsSuggestionElementActive, ICommand } from './obsidian';
 
-export default class Denote extends Plugin {
+export default class PWE extends Plugin {
   readonly app: App;
 
   async onload(): Promise<void> {
-    logger.info({ msg: 'Denote is ON' });
+    logger.info({ msg: 'Personalized Writing Environment is ON' });
 
     ctx.setApp(this.app);
 
@@ -28,7 +28,7 @@ export default class Denote extends Plugin {
     ctx.setApp(null);
     console.clear();
 
-    logger.info({ msg: 'Denote is OFF' });
+    logger.info({ msg: 'Personalized Writing Environment is OFF' });
   }
 
   private setCommands(): void {
