@@ -48,16 +48,19 @@ export default class PWE extends Plugin {
   }
 
   private setEvents(): void {
-    this.registerEvent(
-      this.app.metadataCache.on('changed', async () => {
-        await formatHeadings();
-        await formatFrontMater();
+    const enableAutocmds = false;
+    if (enableAutocmds) {
+      this.registerEvent(
+        this.app.metadataCache.on('changed', async () => {
+          await formatHeadings();
+          await formatFrontMater();
 
-        // Delay to prevent modify and old cached file
-        await wait(200);
-        await renameFile();
-      }),
-    );
+          // Delay to prevent modify and old cached file
+          await wait(200);
+          await renameFile();
+        }),
+      );
+    }
 
     // Select next item in an autocomplete DOM Element
     this.registerDomEvent(document, 'keydown', (evt: KeyboardEvent) => {
