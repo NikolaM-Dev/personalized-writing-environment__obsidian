@@ -9,7 +9,7 @@ interface ILogPayload {
 }
 
 const DEBUG_MODE = false;
-const PLUGIN_PREFIX = '[DENOTE]:';
+const PLUGIN_PREFIX = '[PWE]:';
 
 export const logger = {
   debug: (payload: ILogPayload) => log({ icon: '🐞', ...payload }),

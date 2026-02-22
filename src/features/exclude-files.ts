@@ -2,7 +2,7 @@ import { TFile } from 'obsidian';
 
 export function hasToSkipFile(
   file: TFile,
-  skipPatterns: string[] = ['Journal', 'templates', 'Sources', 'snippets'],
+  skipPatterns: string[] = ['Journal', 'templates', 'snippets'],
 ): boolean {
   let flag = false;
   for (const element of skipPatterns) {

@@ -8,12 +8,10 @@ export interface ICommand {
   callback: () => any;
 }
 
-const COMMAND_PREFIX = 'denote';
-
 export function getCommand(payload: ICommand): Command {
   return {
     callback: payload.callback,
-    id: `${COMMAND_PREFIX}--${toKebabCase(payload.name)}`,
+    id: `${toKebabCase(payload.name)}`,
     name: `${toTitleCase(payload.name)} Command`,
   };
 }
